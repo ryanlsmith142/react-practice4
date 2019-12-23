@@ -3,21 +3,21 @@ import { Container, Jumbotron} from 'react-bootstrap';
 import SearchForm from './components/SearchForm';
 import Results from './components/Results';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Jumbotron>
-            <Container>
-              <h1>Search App</h1>
-              <p>This is a simple search app</p>
-              <SearchForm />
-              <Results />
-            </Container>
-        </Jumbotron>
-      </div>
-    );
-  }
-}
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Jumbotron>
+//             <Container>
+//               <h1>Search App</h1>
+//               <p>This is a simple search app</p>
+//               <SearchForm />
+//               <Results />
+//             </Container>
+//         </Jumbotron>
+//       </div>
+//     );
+//   }
+// }
 
-export default App;
+// export default App;

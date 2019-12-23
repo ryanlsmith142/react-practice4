@@ -2,44 +2,51 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Header = () => {
+    return (
+        <header>
+            <h1>Scoreboard</h1>
+            <span className='stats'>Players: 1</span>
+        </header>
+    );
+};
 
-// const title = React.createElement(
-//     'h1',
-//     { id: 'main-title' },
-//     'My first React Element!'
-// );
+const Player = () => {
+    return (
+      <div className='player'>
+          <span className='player-name'>
+              Ryan
+          </span>
 
-// const title = 'My First React Element!';
-const myTitleID = 'main-title';
-const name = 'Ryan';
-// const desc = React.createElement(
-//     'p',
-//     null,
-//     'I just learned how to create a React node and render it into the DOM.'
-// );
+          <Counter />
+      </div>
 
-const desc = 'I just learned how to create a React node and render it into the DOM.';
+    );
+};
 
-// const header = React.createElement(
-//   'header',
-//   null,
-//   title,
-//   desc
-// );
+const Counter = () => {
+    return (
+        <div className='counter'>
+            <button className='counter-action decrement'> - </button>
+            <span className='counter-score'>35</span>
+            <button className='counter-action increment'> + </button>
+        </div>
+    );
+};
 
-const header = (
-    <header>
-        <h1 id={ myTitleID }>{ name }'s First React Element!</h1>
-        <p>{ desc }</p>
-    </header>
-);
+const App = () => {
+    return (
+        <div className="scoreboard">
+            <Header />
 
+            <Player />
+        </div>
+    );
+};
 ReactDOM.render(
-    header,
+    <App />,
     document.getElementById('treehouse')
 );
 
