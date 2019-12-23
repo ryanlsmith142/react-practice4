@@ -4,6 +4,31 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+const players = [
+
+    {
+        id: 1,
+       name: 'Ryan',
+       score: '50'
+    },
+    {
+        id: 2,
+        name: 'Jennie',
+        score: '35'
+    },
+    {
+        id: 3,
+        name: 'Ben',
+        score: '41'
+    },
+    {
+        id: 4,
+        name: 'Paul',
+        score: '10'
+    }
+
+];
+
 const Header = (props) => {
     return (
         <header>
@@ -17,7 +42,7 @@ const Player = (props) => {
     return (
       <div className='player'>
           <span className='player-name'>
-              { props.playerName }
+              { props.name }
           </span>
 
           <Counter
@@ -38,23 +63,27 @@ const Counter = (props) => {
     );
 };
 
-const App = () => {
+const App = (props) => {
     return (
         <div className="scoreboard">
             <Header
                 title='Scoreboard'
-                totalPlayers={1}
+                totalPlayers={props.initialPlayers.length}
             />
 
-            <Player
-                playerName='Ryan'
-                score={35}
-            />
+            {props.initialPlayers.map( player =>
+                <Player
+                    name={player.name}
+                    score={player.score}
+                    key={player.id.toString()}
+                />
+            )}
         </div>
     );
 };
+
 ReactDOM.render(
-    <App />,
+    <App initialPlayers={players}/>,
     document.getElementById('treehouse')
 );
 
